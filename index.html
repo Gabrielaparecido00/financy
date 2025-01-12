@@ -1,0 +1,156 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Sistema Financeiro</title>
+    <link href="https://fonts.googleapis.com/css2?family=Montserrat&display=swap" rel="stylesheet">
+    <style>
+        body {
+            font-family: 'Montserrat', sans-serif;
+            margin: 0;
+            padding: 0;
+        }
+        .dashboard, .aba {
+            padding: 20px;
+            text-align: center;
+        }
+        table {
+            width: 100%;
+            border-collapse: collapse;
+            margin: 20px 0;
+        }
+        th, td {
+            border: 1px solid #dddddd;
+            padding: 8px;
+            text-align: left;
+        }
+        button {
+            margin: 10px;
+            padding: 10px 20px;
+            font-size: 16px;
+            cursor: pointer;
+        }
+        .hidden {
+            display: none;
+        }
+    </style>
+</head>
+<body>
+
+    <div id="dashboard" class="dashboard">
+        <h1>Dashboard Financeiro 2025</h1>
+        <div>
+            <button onclick="showAba('despesas-janeiro')">Janeiro - Despesas</button>
+            <button onclick="showAba('faturamento')">Faturamento</button>
+            <button onclick="showAba('fluxo-caixa-janeiro')">Janeiro - Fluxo de Caixa</button>
+            <button onclick="showAba('saldo-bancario')">Saldo Bancário</button>
+            <!-- Adicionar outros botões conforme necessário -->
+        </div>
+    </div>
+
+    <!-- Abas de Despesas -->
+    <div id="despesas-janeiro" class="aba hidden">
+        <h2>Despesas Janeiro 2025</h2>
+        <button onclick="showDashboard()">Voltar ao Dashboard</button>
+        <table>
+            <thead>
+                <tr>
+                    <th>Vencimento</th>
+                    <th>Valor</th>
+                    <th>Departamento</th>
+                    <th>Plano de Conta</th>
+                    <th>Histórico</th>
+                    <th>Periodicidade</th>
+                    <th>Banco</th>
+                </tr>
+            </thead>
+            <tbody>
+                <!-- Linhas de despesas aqui -->
+            </tbody>
+        </table>
+    </div>
+
+    <!-- Aba de Faturamento -->
+    <div id="faturamento" class="aba hidden">
+        <h2>Faturamento 2025</h2>
+        <button onclick="showDashboard()">Voltar ao Dashboard</button>
+        <table>
+            <thead>
+                <tr>
+                    <th>NF Nº</th>
+                    <th>Data Emissão</th>
+                    <th>Observações</th>
+                    <th>CNPJ Tomador</th>
+                    <th>Razão Social Tomador</th>
+                    <th>Reajuste</th>
+                    <th>Valor Serviços</th>
+                    <th>Valor Líquido</th>
+                    <th>Valor Pago</th>
+                    <th>Data Pagtº</th>
+                    <th>Diferença</th>
+                    <th>Previsão</th>
+                    <th>Banco</th>
+                </tr>
+            </thead>
+            <tbody>
+                <!-- Linhas de faturamento aqui -->
+            </tbody>
+        </table>
+    </div>
+
+    <!-- Aba de Fluxo de Caixa Diário Janeiro -->
+    <div id="fluxo-caixa-janeiro" class="aba hidden">
+        <h2>Fluxo de Caixa Diário Janeiro 2025</h2>
+        <button onclick="showDashboard()">Voltar ao Dashboard</button>
+        <table>
+            <thead>
+                <tr>
+                    <!-- Colunas apropriadas para fluxo de caixa aqui -->
+                </tr>
+            </thead>
+            <tbody>
+                <!-- Linhas de fluxo de caixa diário aqui -->
+            </tbody>
+        </table>
+    </div>
+
+    <!-- Aba de Saldo Bancário -->
+    <div id="saldo-bancario" class="aba hidden">
+        <h2>Saldo Bancário 2025</h2>
+        <button onclick="showDashboard()">Voltar ao Dashboard</button>
+        <table>
+            <thead>
+                <tr>
+                    <th>Data</th>
+                    <th>Brasil</th>
+                    <th>Bradesco</th>
+                    <th>C.E.F</th>
+                    <th>Safra</th>
+                    <th>Sicredi</th>
+                    <th>Sicoob - 4340</th>
+                    <th>Itaú</th>
+                    <th>Santander</th>
+                    <th>Saldo</th>
+                    <th>Comentários</th>
+                </tr>
+            </thead>
+            <tbody>
+                <!-- Linhas de saldo bancário aqui -->
+            </tbody>
+        </table>
+    </div>
+
+    <script>
+        function showAba(id) {
+            document.querySelectorAll('.aba').forEach(el => el.classList.add('hidden'));
+            document.getElementById(id).classList.remove('hidden');
+        }
+        function showDashboard() {
+            document.querySelectorAll('.aba').forEach(el => el.classList.add('hidden'));
+            document.getElementById('dashboard').classList.remove('hidden');
+        }
+    </script>
+
+</body>
+</html>
